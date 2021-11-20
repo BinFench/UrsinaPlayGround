@@ -27,9 +27,9 @@ class CinematicCamera():
 
     def update(self):
         if (self.pfunc is not None):
-            self.position = self.pfunc(self.focus, self.foci)
+            self.position = self.pfunc(self, self.focus, self.foci)
         if (self.rfunc is not None):
-            self.rotation = self.rfunc(self.focus, self.foci)
+            self.rotation = self.rfunc(self, self.focus, self.foci)
         if (self.fovfunc is not None):
-            self.fov = self.fovfunc(self.focus, self.foci)
+            self.fov = self.fovfunc(self, self.focus, self.foci)
         self.updateCamera()
